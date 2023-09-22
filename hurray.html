@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <script src="./Script.js"></script>
+    <style>
+        body {
+            background-color: lightgreen;
+        }
+        .stars{
+          position:absolute;
+          margin-left : 370px;
+          margin-top:100px;
+        }
+        .cup{
+          position:absolute;
+          margin-left: 530px;
+          margin-top: 220px;
+
+        }
+        p1 {
+          position:absolute;
+           margin-top: 440px;
+            margin-left: 520px;
+            color: white;
+            font-size: 45px;
+           }
+           p2 {
+            position:absolute;
+            margin-top: 495px;
+            margin-left: 530px;
+            color: white;
+            font-size: 20px;
+        }
+         .play{
+          position:absolute;
+            margin-left: 600px;
+            margin-top: 510px;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 40px;
+            width: 120px;
+            border: none;
+        }
+        .rules{
+    margin-top: 510px;
+    margin-left: 1150px;
+    height: 40px;
+    width: 80px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color:white;
+    background-color: lightgreen;
+    cursor: pointer;
+  }
+  .popup-menu {
+            position: absolute;
+            background-color: green;
+            border: 5px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-left: 970px;
+            margin-top: -400px;
+            width:305px;
+  }
+  .close{
+       position: absolute;
+       background-color: red;
+       cursor: pointer;
+       border-radius: 50px;
+       border: 5px solid white;
+       color: white;
+       height: 40px;
+       width: 50px;
+       margin-top: -340px;
+       margin-left: 300px;
+}
+
+    </style>
+</head>
+<body>
+  <div class ="stars">
+  <img src="https://i.ibb.co/bKyjMbm/stars.png" alt="stars">
+  </div>
+  <div class ="cup">
+    <img src="https://i.ibb.co/NVvC61X/winner.png" alt="winner">
+  </div>
+    <p1><b>HURRAY!!</b></p1>
+    <p2>YOU WON THE GAME</p2>
+    <br>
+    <br>
+    <br>
+    <a href ="index.html"></a>
+    <button class ="play" onclick="backtopage()">PLAY AGAIN</button>
+    <button class ="rules" onclick="togglePopup()">RULES</button>
+    <div class="popup-menu" id="popup">
+      <h1 style="margin-left: 70px; margin-top: -13px;color:white;">Game Rules</h1>
+      <ul>
+        <li style="color:white;"> Rock beats scissors, scissors beats
+             paper,and paper beats rock.
+        </li>
+        <br>
+        <li style="color:white;">
+          Agree ahead of time whether you'll
+          count off "rock,paper,scissors,
+          shoot" or just."rock,paper,scissors."
+        </li>
+        <br>
+        <li style="color:white;">
+          Use rock, paper, scissors to settle
+          minor decisions or simply play to
+          pass the time.
+        </li>
+        <br>
+        <li style="color:white;">
+          if both players lay down the same
+          hand,each player lays down another
+          hand.
+        </li>
+      </ul>
+      <button class ="close" onclick="closePopup()">X</button>
+      </div>
+      
+</body>
+</html>

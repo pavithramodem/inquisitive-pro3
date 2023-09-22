@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content ="width= device-width ,initial-scale = 1.0">
+    <title>stonepaperscissor</title>
+    <script src ="./script.js"></script>
+<style>
+  body{
+    background-color: lightgreen;
+  }
+  .box{
+    display : flex;
+    border : 2px solid white;
+    width : 600px;
+    height: 110px;
+    margin : 40px 350px;
+    border-radius: 8px;
+}
+.game{
+  list-style-type: none;
+  font-size: 25px ;
+  color: white;
+  padding-left: 18px;
+  }
+
+.box1{
+   display : flex;
+  height :80px;
+  width : 100px;
+  border : 1px solid white;
+  border-radius : 5px;
+  margin-top: 15px;
+  background-color: white;
+  margin-left: 200px;
+}
+.box2{
+   display : flex;
+  height :80px;
+  width : 100px;
+  border : 1px solid white;
+  border-radius : 5px;
+  margin-left: 30px;
+  margin-top : 15px;
+  background-color: white;
+} 
+#one{
+  margin-top: 10px;
+  padding-left: 10px;
+}
+#two{
+  position:absolute;
+  margin-top: 25px;
+  margin-left:20px;
+}
+#three{
+  font-size: 20px;
+  margin-top: 50px;
+  margin-left: -50px;
+  
+}
+#six{
+  margin-top: 50px;
+  margin-left: -30px;
+  font-size: 20px;
+}
+#four{
+  margin-left: 20px;
+  margin-top: 10px;
+}
+#five{
+  margin-top: 25px;
+  margin-left: -45px;
+}
+.circle,.circle1,.circle2{
+	display: flex;
+	background-color:white;
+	border-radius: 60px;
+	height: 120px;
+	width: 120px;
+	margin-left: 400px;
+  border: 6px solid blue;
+  transition: transform 0.3s;
+	}
+  .circle1{
+	margin-left: 630px;
+	margin-top:-110px;
+  border: 6px solid magenta;
+  
+	}
+.circle2{
+	margin-left: 520px;
+  margin-top: 60px;
+  border: 6px solid orange;
+  }
+  .circle2 img{
+    margin-left: 20px;
+    margin-top: 10px;
+    cursor:pointer;
+  }
+  .circle img{
+    margin-left: 20px;
+    margin-top: 10px;
+    cursor:pointer;
+  }
+  .circle1 img{
+    margin-left: 20px;
+    margin-top: 9px;
+    cursor:pointer;
+  }
+  .circle:hover ,.circle1:hover, .circle2:hover{
+     transform: scale(1.2);
+  }
+  .circles-container {
+            position: relative;
+        }
+  .line {
+            position: absolute;
+            background-color: black;
+            width: 6px;
+            height: 112px;
+            top: 115px;
+            left: 480px;
+            transform-origin: 50% 0;
+            transform: rotate(-25deg);
+        }
+
+        .line1 {
+            position: absolute;
+            background-color: black;
+            width: 6px;
+            height: 113px;
+            top: 60px;
+            left: 629px;
+            transform-origin: 50% 0;
+            transform: rotate(90deg);
+        }
+
+        .line2 {
+            position: absolute;
+            background-color:black;
+            top: 209px;
+            width: 6px;
+            height: 97px;
+            left: 620px;
+            transform-origin: 50% 0;
+            transform: rotate(-160deg);
+        }
+
+  .rule1{
+    margin-top: 30px;
+    margin-left: 1100px;
+    height: 40px;
+    width: 80px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color:white;
+    background-color: lightgreen;
+    cursor: pointer;
+  }
+  .popup-menu {
+            display: none;
+            position: absolute;
+            background-color: green;
+            border: 5px solid white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-left: 970px;
+            margin-top: -420px;
+            width:305px;
+  }
+  .close{
+       position: absolute;
+       background-color: red;
+       cursor: pointer;
+       border-radius: 50px;
+       border: 5px solid white;
+       color: white;
+       height: 40px;
+       width: 50px;
+       margin-top: -340px;
+       margin-left: 300px;
+}
+
+</style>
+</head>
+<body>
+   <div class = "box">
+    <ul class ="game">
+      <li>ROCK</li>
+      <li>PAPER</li>
+      <li>SCISSORS</li>
+    </ul>
+   <div class ="box1">
+    <p id ="one"> COMPUTER<p>
+    <p id ="two">SCORE</p>
+     <div>
+    <p id ="three"><b>0</b></p>
+    </div>
+    </div>
+   <div class ="box2">
+    <p id ="four">YOUR</p>
+    <p id ="five">SCORE</p>
+    <div>
+    <p id ="six"><b>0</b></p>
+    </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class = "circles-container">
+      <button class ="circle" onclick="play('stone')">
+        <img src="https://i.ibb.co/6H9V6gg/stone.jpg" alt="stone" height="80px" width="60px">
+    </button>
+      <button class = "circle1" onclick="play('paper')">
+        <img src="https://i.ibb.co/Dkjd8TK/scissor.jpg" alt="scissor" height="82px" width="60px">
+    </button>
+      <button class ="circle2" onclick="play('scissors')">
+        <img src="https://i.ibb.co/9Vpw4Zh/paper.jpg" alt="paper" height="80px" width="60px">
+    </button>
+     <div class="line"></div>
+     <div class="line1"></div>
+     <div class="line2"></div>
+    </div>
+    <button class ="rule1" onclick="togglePopup()">RULES</button>
+    <div class="popup-menu" id="popup">
+      <h1 style="margin-left: 70px; margin-top: -13px;color:white;">Game Rules</h1>
+      <ul>
+        <li style="color:white;"> Rock beats scissors, scissors beats
+             paper,and paper beats rock.
+        </li>
+        <br>
+        <li style="color:white;">
+          Agree ahead of time whether you'll
+          count off "rock,paper,scissors,
+          shoot" or just."rock,paper,scissors."
+        </li>
+        <br>
+        <li style="color:white;">
+          Use rock, paper, scissors to settle
+          minor decisions or simply play to
+          pass the time.
+        </li>
+        <br>
+        <li style="color:white;">
+          if both players lay down the same
+          hand,each player lays down another
+          hand.
+        </li>
+      </ul>
+      <button class ="close" onclick="closePopup()">X</button>
+      </div>
+
+      
+</body>
+</html>
